@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2024-12-27_13-17-37",
+            "content": "@@ -1354,17 +1354,16 @@\n n %22pass:\n- \n %22 + this\n@@ -1377,17 +1377,16 @@\n  %22, gas:\n- \n %22 + this\n@@ -1398,17 +1398,16 @@\n + %22, km:\n- \n %22 + this\n"
+        },
+        {
+            "label": "2024-12-27_13-22-34",
+            "content": "@@ -701,36 +701,36 @@\n tln(%22fail: n\n-ao ha\n+%C3%A3o h%C3%A1\n  ningu\n-e\n+%C3%A9\n m no carro%22)\n"
+        },
+        {
+            "label": "2024-12-27_13-23-01",
+            "content": "@@ -1095,17 +1095,16 @@\n this.km \n-+\n = distan\n"
+        },
+        {
+            "label": "2024-12-27_13-27-45",
+            "content": "@@ -1011,17 +1011,16 @@\n this.km \n-+\n = this.g\n"
+        },
+        {
+            "label": "2024-12-27_13-28-18",
+            "content": "public class Car {\n    int pass;\n    int passMax;\n    int gas;\n    int gasMax;\n    int km;\n\n    public Car() {\n        this.pass = 0;\n        this.km = 0;\n        this.passMax = 2;\n        this.gas = 0;\n        this.gasMax = 100;\n    }\n\n    public void enter() {\n        this.pass++;\n        if(this.pass > 2) {\n            this.pass = 2;\n            System.out.println(\"fail: limite de pessoas atingido\");\n        }\n    }\n    public void leave() {\n        this.pass--;\n        if(this.pass < 0) {\n            this.pass = 0;\n            System.out.println(\"fail: nao ha ninguem no carro\");\n        }\n    }\n    public void drive(int distance) {\n        if(this.pass == 0) {\n            System.out.println(\"fail: nao ha ninguem no carro\");\n            return;\n        }\n        if(this.gas == 0) {\n            System.out.println(\"fail: tanque vazio\");\n            return;\n        }\n        if(distance > this.gas){\n            System.out.println(\"fail: tanque vazio apos andar \" + this.gas + \" km\");\n            this.km += this.gas;\n            this.gas = 0;\n            return;\n        }\n        this.km += distance;\n        this.gas -= this.km;\n    }\n    public void fuel(int increment) {\n        this.gas += increment;\n        if(this.gas >= this.gasMax) {\n            this.gas = this.gasMax;\n        }\n    }\n\n    public String toString() {\n        return \"pass: \" + this.pass + \", gas: \" + this.gas + \", km: \" + this.km;\n    }\n}"
+        }
+    ]
+}
